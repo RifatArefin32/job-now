@@ -24,7 +24,62 @@ View files are stored at `./app/resources/views/` directory
 - `@props` are used as the external variables or attributes passed to the element to blade
 - `$attributes` variables are used to catch all the attributes passed to the element
 
+### Create Model in laravel
+```bash
+php artisan make:model Job
+```
 
+## Laravel Column Types and Functions
+
+### String Types
+- string('column_name', 255): Creates a VARCHAR column with a length of 255 characters by default.
+- char('column_name', 4): Creates a CHAR column with a specified length.
+- text('column_name'): Creates a TEXT column for larger text.
+- mediumText('column_name'): Creates a MEDIUMTEXT column.
+- longText('column_name'): Creates a LONGTEXT column.
+
+### Integer Types
+- integer('column_name'): Creates an INT column.
+- bigInteger('column_name'): Creates a BIGINT column.
+- mediumInteger('column_name'): Creates a MEDIUMINT column.
+- smallInteger('column_name'): Creates a SMALLINT column.
+- tinyInteger('column_name'): Creates a TINYINT column.
+- unsignedInteger('column_name'): Creates an UNSIGNED INT column.
+- unsignedBigInteger('column_name'): Creates an UNSIGNED BIGINT column.
+
+### Boolean Type
+- boolean('column_name'): Creates a BOOLEAN column.
+
+### Date and Time Types
+- date('column_name'): Creates a DATE column.
+- dateTime('column_name'): Creates a DATETIME column.
+- timestamp('column_name'): Creates a TIMESTAMP column.
+- time('column_name'): Creates a TIME column.
+- year('column_name'): Creates a YEAR column.
+
+### Decimal Types
+- float('column_name', 8, 2): Creates a FLOAT column with a precision of 8 and a scale of 2.
+- double('column_name', 15, 8): Creates a DOUBLE column with a precision of 15 and a scale of 8.
+- decimal('column_name', 8, 2): Creates a DECIMAL column with a precision of 8 and a scale of 2.
+
+### Binary Type
+- binary('column_name'): Creates a BLOB column.
+
+### JSON Type
+- json('column_name'): Creates a JSON column.
+
+## Create Model item from tinker
+```bash
+php artisan tinker
+
+App\Models\Job::create(['title'=>'Associate Software Engineer', 'salary'=>50000.00, 'currency'=>'BDT', 'description'=>'Test Description']);
+```
+## Create Factory
+```bash
+App\Models\User::factory()->create();
+App\Models\User::factory(20)->create();
+
+```
 
 # About Laravel
 

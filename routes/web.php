@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
+use App\Models\Job;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,54 +14,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-$jobs = [
-    [
-        'id' => 1,
-        'title' => 'Associate Software Engineer',
-        'salary' => 50000,
-        'currency' => 'BDT',
-        'vacancy'=> 5,
-        'deadline' => '2024-12-12',
-        'description' => 'Test description'
-    ],
-    [
-        'id' => 2,
-        'title' => 'Software Engineer',
-        'salary' => 70000,
-        'currency' => 'BDT',
-        'vacancy'=> 5,
-        'deadline' => '2024-12-12',
-        'description' => 'Test description'
-    ],
-    [
-        'id' => 3,
-        'title' => 'Senior Software Engineer',
-        'salary' => 120000,
-        'currency' => 'BDT',
-        'vacancy'=> 5,
-        'deadline' => '2024-12-12',
-        'description' => 'Test description'
-    ],
-    [
-        'id' => 4,
-        'title' => 'Technical Lead',
-        'salary' => 150000,
-        'currency' => 'BDT',
-        'vacancy'=> 5,
-        'deadline' => '2024-12-12',
-        'description' => 'Test description'
-    ],
-    [
-        'id' => 5,
-        'title' => 'Principal Engineer',
-        'salary' => 200000,
-        'currency' => 'BDT',
-        'vacancy'=> 5,
-        'deadline' => '2024-12-12',
-        'description' => 'Test description'
-    ]
-];
 
 Route::get('/', function () {
     return view('home', [
@@ -77,18 +30,14 @@ Route::get('/contact', function() {
     return view('contact');
 });
 
-Route::get('/jobs', function() use($jobs) {
+Route::get('/jobs', function() {
     return view('jobs', [
-        'jobs' => $jobs,
+        'jobs' => Job::all()
     ]);
 });
 
-Route::get('/job/{id}', function($id) use($jobs) {
-    $job = Illuminate\Support\Arr::first($jobs, function($job) use($id) {
-        return $job['id'] == $id;
-    });
-
+Route::get('/job/{id}', function($id) {
     return view('job_details', [
-        'job' => $job
+        'job' => Job::find($id)
     ]);
 });
