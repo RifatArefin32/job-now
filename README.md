@@ -1,16 +1,24 @@
 # Job Now
-Job Now is a beginner project to learn Laravel-11. 
+**Job Now** is a beginner project to learn Laravel-11. <br>
 Course: [30 Days to Learn Laravel - Laracast](https://laracasts.com/series/30-days-to-learn-laravel-11)
 
 
 # Learning Notes
 
-## Project creation using composer
-
+## Day-1: Hello Laravel
+Create project from terminal.
 ```bash
 composer create-project laravel/laravel job-now
 ```
+Start the project. It will start at localhost server and 8000 port. 
+```bash
+php artisan serve
+```
 
+## Day-2: Your First Route and View
+Create Routes at `./routes/web.php` file. Each route has a method (e.g. GET, POST, PUT, DELETE etc.), routing path and a function. This function defines which action to do while request to this route.
+
+View files are stored at
 
 
 
