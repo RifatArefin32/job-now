@@ -5,8 +5,7 @@ Course: [30 Days to Learn Laravel - Laracast](https://laracasts.com/series/30-da
 
 # Learning Notes
 
-## Day-1: Hello Laravel
-Create project from terminal.
+### Create project from terminal.
 ```bash
 composer create-project laravel/laravel job-now
 ```
@@ -14,19 +13,18 @@ Start the project. It will start at localhost server and 8000 port.
 ```bash
 php artisan serve
 ```
+### Creating Routes and views
+Create Routes at `./routes/web.php` file. Each route has a method (e.g. GET, POST, PUT, DELETE etc.), routing path and a function. This function defines which action to do while request to this route.
+View files are stored at `./app/resources/views/` directory
 
-## Day-2: Your First Route and View
-- Create Routes at `./routes/web.php` file. Each route has a method (e.g. GET, POST, PUT, DELETE etc.), routing path and a function. This function defines which action to do while request to this route.
-- View files are stored at `./app/resources/views/` directory
-
-## Day-3: Create a Layout File Using Laravel Components
+### Laravel Components
 - Create `components/` directory at `./app/resources/views/` that contains files of reusable components can be used in multiple views. 
 - Access the component by using `<x-component_name></x-component_name>` tag and inside it we can pass values. These values are captured by the component in a variable called `$slot` and we can use `$slot`variables in our layout usning `{{ $slot }}` or `<php? echo "$slot" ?>`
 - We can also use slot variables using `<x-slot:variable_name> </x-slot:variable_name>` and use the variable in the component file using `{{ $variable_name }}`
+- `@props` are used as the external variables or attributes passed to the element to blade
+- `$attributes` variables are used to catch all the attributes passed to the element
 
-## Day-4: Make a Pretty Layout Using TailwindCSS
-- We can use slot-variables as well
-For example: 
+
 
 # About Laravel
 
