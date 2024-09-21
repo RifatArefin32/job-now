@@ -78,7 +78,7 @@ App\Models\Job::create(['title'=>'Associate Software Engineer', 'salary'=>50000.
 ```bash
 App\Models\User::factory()->create();
 App\Models\User::factory(20)->create();
-
+App\Models\Job::factory(2)->without_salary()->create();
 ```
 
 # About Laravel

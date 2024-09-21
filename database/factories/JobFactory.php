@@ -24,4 +24,15 @@ class JobFactory extends Factory
             'description' => fake()->text()
         ];
     }
+
+
+    /**
+     * Indicate that the model's email address should be unverified.
+     */
+    public function without_salary(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'salary' => null,
+        ]);
+    }
 }
