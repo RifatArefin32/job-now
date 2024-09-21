@@ -22,8 +22,11 @@ php artisan serve
 ## Day-3: Create a Layout File Using Laravel Components
 - Create `components/` directory at `./app/resources/views/` that contains files of reusable components can be used in multiple views. 
 - Access the component by using `<x-component_name></x-component_name>` tag and inside it we can pass values. These values are captured by the component in a variable called `$slot` and we can use `$slot`variables in our layout usning `{{ $slot }}` or `<php? echo "$slot" ?>`
+- We can also use slot variables using `<x-slot:variable_name> </x-slot:variable_name>` and use the variable in the component file using `{{ $variable_name }}`
 
-
+## Day-4: Make a Pretty Layout Using TailwindCSS
+- We can use slot-variables as well
+For example: 
 
 # About Laravel
 
