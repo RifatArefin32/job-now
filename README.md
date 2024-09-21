@@ -16,11 +16,12 @@ php artisan serve
 ```
 
 ## Day-2: Your First Route and View
-Create Routes at `./routes/web.php` file. Each route has a method (e.g. GET, POST, PUT, DELETE etc.), routing path and a function. This function defines which action to do while request to this route.
+- Create Routes at `./routes/web.php` file. Each route has a method (e.g. GET, POST, PUT, DELETE etc.), routing path and a function. This function defines which action to do while request to this route.
+- View files are stored at `./app/resources/views/` directory
 
-View files are stored at
-
-
+## Day-3: Create a Layout File Using Laravel Components
+- Create `components/` directory at `./app/resources/views/` that contains files of reusable components can be used in multiple views. 
+- Access the component by using `<x-component_name></x-component_name>` tag and inside it we can pass values. These values are captured by the component in a variable called `$slot` and we can use `$slot`variables in our layout usning `{{ $slot }}` or `<php? echo "$slot" ?>`
 
 
 
